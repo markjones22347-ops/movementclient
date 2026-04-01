@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,75 +40,82 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        
+
         * {
             font-family: 'Inter', sans-serif;
         }
-        
+
         body {
             background: #000000;
             min-height: 100vh;
             overflow-x: hidden;
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .glass {
             background: rgba(26, 26, 26, 0.8);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .glass-modal {
             background: rgba(10, 10, 10, 0.98);
             backdrop-filter: blur(30px);
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
-        
+
         .btn-gradient {
             background: #ffffff;
             color: #000000;
             transition: all 0.3s ease;
         }
-        
+
         .btn-gradient:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
         }
-        
+
         .btn-discord {
             background: #ffffff;
             color: #000000;
             transition: all 0.3s ease;
         }
-        
+
         .btn-discord:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
         }
-        
+
         .bg-grid {
-            background-image: 
+            background-image:
                 linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
         }
-        
+
         .typewriter {
             border-right: 3px solid #ffffff;
             animation: blink 1s infinite;
         }
-        
+
         @keyframes blink {
-            0%, 100% { border-color: #ffffff; }
-            50% { border-color: transparent; }
+
+            0%,
+            100% {
+                border-color: #ffffff;
+            }
+
+            50% {
+                border-color: transparent;
+            }
         }
-        
+
         .custom-checkbox {
             appearance: none;
             width: 20px;
@@ -118,11 +126,11 @@
             position: relative;
             transition: all 0.3s ease;
         }
-        
+
         .custom-checkbox:checked {
             background: #ffffff;
         }
-        
+
         .custom-checkbox:checked::after {
             content: '✓';
             position: absolute;
@@ -135,24 +143,31 @@
         }
     </style>
 </head>
+
 <body class="text-white bg-grid">
     <!-- Background Elements -->
     <div class="fixed inset-0 pointer-events-none">
         <div class="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-3xl"></div>
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-3xl">
+        </div>
     </div>
 
     <!-- Main Container -->
     <div class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
-        
+
         <!-- Logo Section -->
         <div class="mb-8 animate-float">
-            <div class="w-32 h-32 rounded-3xl bg-gradient-to-br from-white to-gray-400 flex items-center justify-center shadow-2xl animate-glow">
+            <div
+                class="w-32 h-32 rounded-3xl bg-gradient-to-br from-white to-gray-400 flex items-center justify-center shadow-2xl animate-glow">
                 <svg class="w-24 h-24 text-black" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="currentColor" d="M 70 180 Q 70 110 100 110 L 128 150 L 156 110 Q 186 110 186 180 L 166 180 Q 166 135 150 135 L 128 165 L 106 135 Q 90 135 90 180 Z"/>
-                    <path fill="currentColor" d="M 100 125 Q 60 115 40 130 Q 55 135 75 145 Q 55 145 35 155 Q 55 160 75 168 Q 55 168 32 178 Q 60 185 90 175 Z"/>
-                    <path fill="currentColor" d="M 156 125 Q 196 115 216 130 Q 201 135 181 145 Q 201 145 221 155 Q 201 160 181 168 Q 201 168 224 178 Q 196 185 166 175 Z"/>
+                    <path fill="currentColor"
+                        d="M 70 180 Q 70 110 100 110 L 128 150 L 156 110 Q 186 110 186 180 L 166 180 Q 166 135 150 135 L 128 165 L 106 135 Q 90 135 90 180 Z" />
+                    <path fill="currentColor"
+                        d="M 100 125 Q 60 115 40 130 Q 55 135 75 145 Q 55 145 35 155 Q 55 160 75 168 Q 55 168 32 178 Q 60 185 90 175 Z" />
+                    <path fill="currentColor"
+                        d="M 156 125 Q 196 115 216 130 Q 201 135 181 145 Q 201 145 221 155 Q 201 160 181 168 Q 201 168 224 178 Q 196 185 166 175 Z" />
                 </svg>
             </div>
         </div>
@@ -174,16 +189,20 @@
 
         <!-- Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 mb-16">
-            <button onclick="openDiscord()" class="btn-discord px-8 py-4 rounded-2xl font-bold text-black flex items-center gap-3 text-lg">
+            <button onclick="openDiscord()"
+                class="btn-discord px-8 py-4 rounded-2xl font-bold text-black flex items-center gap-3 text-lg">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    <path
+                        d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
                 </svg>
                 Official Discord Server
             </button>
-            
-            <button onclick="showDownloadModal()" class="btn-gradient px-8 py-4 rounded-2xl font-bold text-black flex items-center gap-3 text-lg">
+
+            <button onclick="showDownloadModal()"
+                class="btn-gradient px-8 py-4 rounded-2xl font-bold text-black flex items-center gap-3 text-lg">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
                 Download v1.0
             </button>
@@ -194,27 +213,30 @@
             <div class="glass rounded-2xl p-6 text-center">
                 <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-3">
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                 </div>
                 <h3 class="font-semibold mb-1">One-Click Launch</h3>
                 <p class="text-gray-400 text-sm">Play Minecraft instantly with your favorite mods</p>
             </div>
-            
+
             <div class="glass rounded-2xl p-6 text-center">
                 <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-3">
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>
                 </div>
                 <h3 class="font-semibold mb-1 text-white">Modrinth Built-in</h3>
                 <p class="text-gray-400 text-sm">Browse and install mods directly from the launcher</p>
             </div>
-            
+
             <div class="glass rounded-2xl p-6 text-center">
                 <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-3">
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                     </svg>
                 </div>
                 <h3 class="font-semibold mb-1">Full Customization</h3>
@@ -224,18 +246,23 @@
 
         <!-- Footer -->
         <footer class="text-center text-gray-500 text-sm">
-            <p>Developed with <span class="text-white">♥</span> by <span class="text-white font-semibold">Wodak</span></p>
+            <p>Developed with <span class="text-white">♥</span> by <span class="text-white font-semibold">Wodak</span>
+            </p>
             <p class="mt-1">Not affiliated with Mojang or Microsoft</p>
         </footer>
     </div>
 
     <!-- Download Modal -->
-    <div id="downloadModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
-        <div class="glass-modal rounded-3xl p-8 max-w-md w-full transform scale-95 opacity-0 transition-all duration-300" id="modalContent">
+    <div id="downloadModal"
+        class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+        <div class="glass-modal rounded-3xl p-8 max-w-md w-full transform scale-95 opacity-0 transition-all duration-300"
+            id="modalContent">
             <div class="text-center mb-6">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-white to-gray-400 flex items-center justify-center mx-auto mb-4">
+                <div
+                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-white to-gray-400 flex items-center justify-center mx-auto mb-4">
                     <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
                 </div>
                 <h2 class="text-2xl font-bold mb-2">Before You Download</h2>
@@ -243,27 +270,32 @@
             </div>
 
             <div class="space-y-3 mb-6">
-                <label class="check-item flex items-center gap-3 p-3 rounded-xl bg-dark-700/50 cursor-pointer hover:bg-dark-700 transition">
+                <label
+                    class="check-item flex items-center gap-3 p-3 rounded-xl bg-dark-700/50 cursor-pointer hover:bg-dark-700 transition">
                     <input type="checkbox" class="custom-checkbox" onchange="checkRequirements()">
                     <span class="flex-1">Windows 10 or 11</span>
                 </label>
-                
-                <label class="check-item flex items-center gap-3 p-3 rounded-xl bg-dark-700/50 cursor-pointer hover:bg-dark-700 transition">
+
+                <label
+                    class="check-item flex items-center gap-3 p-3 rounded-xl bg-dark-700/50 cursor-pointer hover:bg-dark-700 transition">
                     <input type="checkbox" class="custom-checkbox" onchange="checkRequirements()">
                     <span class="flex-1">Java 17 or higher installed</span>
                 </label>
-                
-                <label class="check-item flex items-center gap-3 p-3 rounded-xl bg-dark-700/50 cursor-pointer hover:bg-dark-700 transition">
+
+                <label
+                    class="check-item flex items-center gap-3 p-3 rounded-xl bg-dark-700/50 cursor-pointer hover:bg-dark-700 transition">
                     <input type="checkbox" class="custom-checkbox" onchange="checkRequirements()">
                     <span class="flex-1">Internet connection</span>
                 </label>
             </div>
 
             <div class="flex gap-3">
-                <button onclick="closeDownloadModal()" class="flex-1 py-3 rounded-xl bg-dark-700 hover:bg-dark-600 font-medium transition">
+                <button onclick="closeDownloadModal()"
+                    class="flex-1 py-3 rounded-xl bg-dark-700 hover:bg-dark-600 font-medium transition">
                     Cancel
                 </button>
-                <button id="downloadBtn" onclick="startDownload()" disabled class="flex-1 py-3 rounded-xl bg-gray-600 text-gray-400 font-medium cursor-not-allowed transition">
+                <button id="downloadBtn" onclick="startDownload()" disabled
+                    class="flex-1 py-3 rounded-xl bg-gray-600 text-gray-400 font-medium cursor-not-allowed transition">
                     Download
                 </button>
             </div>
@@ -286,7 +318,7 @@
 
         function typeEffect() {
             const currentPhrase = phrases[phraseIndex];
-            
+
             if (isDeleting) {
                 typewriter.textContent = currentPhrase.substring(0, charIndex - 1);
                 charIndex--;
@@ -325,7 +357,7 @@
             const content = document.getElementById('modalContent');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            
+
             setTimeout(() => {
                 content.classList.remove('scale-95', 'opacity-0');
                 content.classList.add('scale-100', 'opacity-100');
@@ -335,10 +367,10 @@
         function closeDownloadModal() {
             const modal = document.getElementById('downloadModal');
             const content = document.getElementById('modalContent');
-            
+
             content.classList.remove('scale-100', 'opacity-100');
             content.classList.add('scale-95', 'opacity-0');
-            
+
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
@@ -349,7 +381,7 @@
             const checkboxes = document.querySelectorAll('#downloadModal .custom-checkbox');
             const downloadBtn = document.getElementById('downloadBtn');
             const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-            
+
             if (allChecked) {
                 downloadBtn.disabled = false;
                 downloadBtn.classList.remove('bg-gray-600', 'text-gray-400', 'cursor-not-allowed');
@@ -362,7 +394,7 @@
         }
 
         function startDownload() {
-            window.location.href = 'https://rootz-files.85a231f67cabccb38b67ab26e81ec217.r2.cloudflarestorage.com/anonymous/1775064324209-Movement%20Client.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=7c930334f9457380ee8c83b46068f82d%2F20260401%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260401T172627Z&X-Amz-Expires=3600&X-Amz-Signature=70f8c42c13711c298b4aadebec43e9c374712519d46c0659fc8c61e88b290c87&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22Movement%20Client.zip%22%3B%20filename%2A%3DUTF-8%27%27Movement%2520Client.zip&x-amz-checksum-mode=ENABLED&x-id=GetObject';
+            window.location.href = 'https://gofile.io/d/ZVOQVk';
             closeDownloadModal();
         }
 
@@ -374,4 +406,5 @@
         });
     </script>
 </body>
+
 </html>
